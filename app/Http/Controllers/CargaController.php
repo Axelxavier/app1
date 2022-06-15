@@ -31,31 +31,36 @@ class CargaController extends Controller
         //si el archivo está separado por puntos y comas es necesario primero reemplazar las comas x nada y luego reemplazar los puntos y comas por comas
 
         for ($i=1; $i < sizeof($array); $i++) { 
-
+            $j=0;
             $tco = new Tco();
-            $tco->proveedor = $array[$i][0];
-            $tco->Ruc = $array[$i][1];
-            $tco->Division = $array[$i][2];
-            $tco->Departamento = $array[$i][3];
-            $tco->Fecha_Proceso = $array[$i][4];
-            $tco->Documento = $array[$i][5];
-            $tco->Marca = $array[$i][6];
-            $tco->Tipo_Producto = $array[$i][7];
-            $tco->Tipo_Marca = $array[$i][8];
-            $tco->sucursal_recp = $array[$i][9];
-            $tco->Mh_orig = $array[$i][10];
-            $tco->Tarifa_s_cross = $array[$i][11];
-            $tco->tarifa_s_pick = $array[$i][12];
-            $tco->tarifa_s_dev = $array[$i][13];
-            $tco->unidades_cross = $array[$i][14];
-            $tco->unidades_pick = $array[$i][15];
-            $tco->unidades_dev = $array[$i][16];
-            $tco->stock_s_cross = $array[$i][17];
-            $tco->stock_s_pick = $array[$i][18];
-            $tco->stock_s_dev = $array[$i][19];
-            $tco->costolog_s_cross = $array[$i][20];
-            $tco->costolog_s_pick = $array[$i][21];
-            $tco->costolog_s_dev = $array[$i][22];
+            $tco->proveedor = $array[$i][$j]; $j=$j+1;
+            $tco->Ruc = $array[$i][$j]; $j=$j+1;
+            $tco->Division = $array[$i][$j]; $j=$j+1;
+            $tco->Departamento = $array[$i][$j]; $j=$j+1;
+            $tco->Fecha_Proceso = $array[$i][$j]; $j=$j+1;
+            $tco->Documento = $array[$i][$j]; $j=$j+1;
+            $tco->Marca = $array[$i][$j]; $j=$j+1;
+            $tco->Tipo_Producto = $array[$i][$j]; $j=$j+1;
+            $tco->Tipo_Marca = $array[$i][$j]; $j=$j+1;
+            $tco->sucursal_recp = $array[$i][$j]; $j=$j+1;
+            $tco->Mh_orig = $array[$i][$j]; $j=$j+1;
+            $tco->tipo_proveedor = $array[$i][$j]; $j=$j+1;
+            $tco->Tarifa_s_cross = $array[$i][$j]; $j=$j+1;
+            $tco->tarifa_s_pick = $array[$i][$j]; $j=$j+1;
+            $tco->tarifa_s_dev = $array[$i][$j]; $j=$j+1;
+            $tco->tarifa_s_verdes = $array[$i][$j]; $j=$j+1;
+            $tco->unidades_cross = $array[$i][$j]; $j=$j+1;
+            $tco->unidades_pick = $array[$i][$j]; $j=$j+1;
+            $tco->unidades_dev = $array[$i][$j]; $j=$j+1;
+            $tco->unidades_verdes = $array[$i][$j]; $j=$j+1;
+            $tco->stock_s_cross = $array[$i][$j]; $j=$j+1;
+            $tco->stock_s_pick = $array[$i][$j]; $j=$j+1;
+            $tco->stock_s_dev = $array[$i][$j]; $j=$j+1;
+            $tco->stock_s_verdes = $array[$i][$j]; $j=$j+1;
+            $tco->costolog_s_cross = $array[$i][$j]; $j=$j+1;
+            $tco->costolog_s_pick = $array[$i][$j]; $j=$j+1;
+            $tco->costolog_s_dev = $array[$i][$j]; 
+            $tco->costolog_s_verdes = $array[$i][$j]; 
 
             $tco->save();
             
