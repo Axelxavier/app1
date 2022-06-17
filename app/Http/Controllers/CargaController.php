@@ -15,13 +15,16 @@ class CargaController extends Controller
     public function cargatco(){
         
         //antes es necesario copiar el archivo cargatco en la ruta public
-        $path = public_path('cargatco.csv');          
-        
+        $path = public_path('cargatco.csv');      
+            
+        //$path = html_entity_decode($path, ENT_QUOTES | ENT_HTML401, "UTF-8");
         //lines nos devuelve un array por linea del archivo
         $lines = file($path);
         //utf8 para eliminar los errores con la condificación
-        //array map aplica la funcion a cada elemento del array
-        $utf8_lines = array_map('utf8_encode',$lines);
+        //array map aplica la funcion a cada elemento del array        
+        //$utf8_lines = array_map('utf8_encode',$lines);
+        $utf8_lines = array_map('html_entity_decode',$lines);
+        //var_dump($utf8_lines);
         //str_getcsv organiza en un array cada elemento
         $array = array_map('str_getcsv',$utf8_lines);       
 
@@ -44,7 +47,7 @@ class CargaController extends Controller
             $tco->Tipo_Marca = $array[$i][$j]; $j=$j+1;
             $tco->sucursal_recp = $array[$i][$j]; $j=$j+1;
             $tco->Mh_orig = $array[$i][$j]; $j=$j+1;
-            $tco->tipo_proveedor = $array[$i][$j]; $j=$j+1;
+            $tco->tipo_despacho = $array[$i][$j]; $j=$j+1;
             $tco->Tarifa_s_cross = $array[$i][$j]; $j=$j+1;
             $tco->tarifa_s_pick = $array[$i][$j]; $j=$j+1;
             $tco->tarifa_s_dev = $array[$i][$j]; $j=$j+1;
@@ -59,7 +62,7 @@ class CargaController extends Controller
             $tco->stock_s_verdes = $array[$i][$j]; $j=$j+1;
             $tco->costolog_s_cross = $array[$i][$j]; $j=$j+1;
             $tco->costolog_s_pick = $array[$i][$j]; $j=$j+1;
-            $tco->costolog_s_dev = $array[$i][$j]; 
+            $tco->costolog_s_dev = $array[$i][$j]; $j=$j+1;
             $tco->costolog_s_verdes = $array[$i][$j]; 
 
             $tco->save();
