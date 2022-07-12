@@ -33,3 +33,4 @@ Route::get('/cargans',[CargaController::class,'cargans'])->name('cargans');
 Route::get('/reportetco',[ReporteController::class,'generareporte'])->name('reportetco');
 Route::get('/reportetconormal',[ReporteController::class,'generareportenormal'])->name('reportetconormal');
 Route::get('/reportefr',[ReporteController::class,'generareportefr'])->name('reportefr');
+Route::get('/reportens',[ReporteController::class,'generareportens'])->name('reportens');
