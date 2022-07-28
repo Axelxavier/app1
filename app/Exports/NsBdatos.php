@@ -65,7 +65,7 @@ class NsBdatos implements FromCollection, WithHeadings, ShouldAutoSize, WithTitl
                 'SEMANA')                    
         //->where('id_descripcion','cargainicial')                                            
         ->where('RUC',$ruc)
-        ->where('MES',2)
+        ->where('MES',3)
         //->where('SEMANA',$semana)
         ->orderBy('MES','DESC')
         ->orderBy('SEMANA','DESC')

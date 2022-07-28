@@ -22,8 +22,8 @@ class CargaController extends Controller
         $lines = file($path);
         //utf8 para eliminar los errores con la condificación
         //array map aplica la funcion a cada elemento del array        
-        //$utf8_lines = array_map('utf8_encode',$lines);
-        $utf8_lines = array_map('html_entity_decode',$lines);
+        $utf8_lines = array_map('utf8_encode',$lines);
+        //$utf8_lines = array_map('html_entity_decode',$lines);
         //var_dump($utf8_lines);
         //str_getcsv organiza en un array cada elemento
         $array = array_map('str_getcsv',$utf8_lines);       
@@ -81,7 +81,8 @@ class CargaController extends Controller
         //return sizeof($lines);
         //utf8 para eliminar los errores con la condificación
         //array map aplica la funcion a cada elemento del array
-        $utf8_lines = array_map('html_entity_decode',$lines);
+        //$utf8_lines = array_map('html_entity_decode',$lines);
+        $utf8_lines = array_map('utf8_encode',$lines);
         //return $utf8_lines;
         //str_getcsv organiza en un array cada elemento
         $array = array_map('str_getcsv',$utf8_lines);       

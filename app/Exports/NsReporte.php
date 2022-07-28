@@ -70,7 +70,7 @@ WithPreCalculateFormulas
         //->where('id_descripcion','cargainicial')                                            
         ->where('RUC',$ruc)
         //->where('SEMANA',$semana)
-        ->where('MES',2)
+        ->where('MES',3)
         ->groupBy('MES')
         ->groupBy('SEMANA')
         ->groupBy('FLUJOS_PROV_VERDE')

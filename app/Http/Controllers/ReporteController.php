@@ -20,7 +20,7 @@ class ReporteController extends Controller
             ->distinct()
             ->where('tipo_proveedor','cobro%')
             ->where('Tipo_Marca','TERCERAS')
-            ->where('id_descripcion','Junio2022')  
+            ->where('id_descripcion','Julio2022')  
             //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
             // ->where('Proveedor','like','%full bik%')                                    
             ->get();
@@ -42,7 +42,7 @@ class ReporteController extends Controller
             ->distinct()
             ->where('tipo_proveedor','tarifario')
             ->where('Tipo_Marca','TERCERAS')
-            ->where('id_descripcion','Junio2022')
+            ->where('id_descripcion','Julio2022')
             //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
             //->where('Proveedor','like','%day of%')                                    
             ->get();
@@ -63,7 +63,7 @@ class ReporteController extends Controller
     $provfillrate = DB::table('pn_fillrate_comu')
         ->select('CODPROVEEDOR','PROVEEDOR')
         ->distinct() 
-        ->where('id_descripcion','Junio2022')                
+        ->where('id_descripcion','Julio2022')                
         ->where('FLAG_OCABIERTA','NO')                
         ->where('ESTADO','Recepcion Completa')             
         //->where('PROVEEDOR','like','%NEWELL%')         
@@ -87,7 +87,7 @@ class ReporteController extends Controller
             ->distinct() 
             //->where('id_descripcion','cargainicial')
             //->where('SEMANA','18')
-            ->where('mes',2)
+            ->where('mes',3)
             //->where('PROVEEDOR','like','%NEWELL%')         
             ->get();
         
