@@ -167,6 +167,7 @@ class CargaController extends Controller
 
             $fr->save();
             
+            
         }
         return('Carga de Fr exitosa!');
     }
