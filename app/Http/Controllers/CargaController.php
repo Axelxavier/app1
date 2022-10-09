@@ -113,7 +113,6 @@ class CargaController extends Controller
             $fr->ESPREDISTRIBUIDA = $array[$i][17];
             $fr->FECHAEMISION = $array[$i][18];
             $fr->FECHACANCELACION = $array[$i][19];
-
             $fr->FECHAPROXRECEP = $array[$i][20];
             $fr->FECHAESPERADAEMBARQUE = $array[$i][21];
             $fr->FECHAREALEMBARQUE = $array[$i][22];
