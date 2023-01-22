@@ -77,7 +77,8 @@ class CargaController extends Controller
         $path = public_path('cargafr.csv');          
         
         //lines nos devuelve un array por linea del archivo
-        $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);        
+        //$lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);        
+        $lines = file($path);        
         //return sizeof($lines);
         //utf8 para eliminar los errores con la condificación
         //array map aplica la funcion a cada elemento del array
@@ -123,7 +124,6 @@ class CargaController extends Controller
             $fr->ESTADO = $array[$i][27];
             $fr->TEMPORADA = $array[$i][28];
             $fr->PAIS = $array[$i][29];
-
             $fr->PROCEDENCIA = $array[$i][30];
             $fr->CONDIFRECCANT = $array[$i][31];
             $fr->CANTIDADTOTALSOLICITADA = $array[$i][32];
@@ -133,7 +133,6 @@ class CargaController extends Controller
             $fr->VIGENCIAOC = $array[$i][36];
             $fr->ESTADOVIGENCIAOC = $array[$i][37];
             $fr->ESTADOFILLRATE = $array[$i][38];
-
             $fr->DIASVENCIM = $array[$i][39];
             $fr->ESTADODIASVENCIM = $array[$i][40];
             $fr->DIFCANREC = $array[$i][41];
@@ -144,7 +143,6 @@ class CargaController extends Controller
             $fr->DSCTOPROM = $array[$i][46];
             $fr->CONTRUNIPY = $array[$i][47];
             $fr->FILLRATETARGET = $array[$i][48];
-
             $fr->UND_LUCROCESAN = $array[$i][49];
             $fr->LUCROCESAN = $array[$i][50];
             $fr->FECINI = $array[$i][51];
@@ -155,7 +153,6 @@ class CargaController extends Controller
             $fr->GASADM = $array[$i][56];
             $fr->GMUNITSGA = $array[$i][57];
             $fr->CONTRIUNITDGA = $array[$i][58];
-
             $fr->DSCTOCOMP = $array[$i][59];
             $fr->LUCESUNI = $array[$i][60];
             $fr->GLOSA = $array[$i][61];
@@ -177,7 +174,8 @@ class CargaController extends Controller
         $path = public_path('cargaNS.csv');          
         
         //lines nos devuelve un array por linea del archivo
-        $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);        
+        //$lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);        
+        $lines = file($path);
         //return sizeof($lines);
         //utf8 para eliminar los errores con la condificación
         //array map aplica la funcion a cada elemento del array
@@ -362,6 +360,13 @@ class CargaController extends Controller
             $Ns->FECHA_VENTA_RSV = $array[$i][$j];$j=$j+1;
             $Ns->FECHA_ENTREGADO_BT_TR = $array[$i][$j];$j=$j+1;
             $Ns->ETQ_NPS_ENCUESTA = $array[$i][$j];$j=$j+1;
+            $Ns->FECHA_ENCUESTA = $array[$i][$j];$j=$j+1;
+            $Ns->FECHA_DESP_NPS = $array[$i][$j];$j=$j+1;
+            $Ns->BK_COLOR_D_VENTA = $array[$i][$j];$j=$j+1;
+            $Ns->TIPO_PROMESA_CORP = $array[$i][$j];$j=$j+1;
+            $Ns->FECHA_MIN_PROMESA = $array[$i][$j];$j=$j+1;
+            $Ns->PROVEEDOR_RC = $array[$i][$j];$j=$j+1;
+            $Ns->FECHA_R2 = $array[$i][$j];$j=$j+1;
             $Ns->VAL_RESPONSABLEPROV = $array[$i][$j];$j=$j+1;
             $Ns->VAL_NCDDC = $array[$i][$j];$j=$j+1;            
             $Ns->STATUS = $array[$i][$j];$j=$j+1;

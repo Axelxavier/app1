@@ -20,7 +20,7 @@ class ReporteController extends Controller
             ->distinct()
             ->where('tipo_proveedor','cobro%')
             ->where('Tipo_Marca','TERCERAS')
-            ->where('id_descripcion','Julio2022')  
+            ->where('id_descripcion','Dic22prov')  
             //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
             // ->where('Proveedor','like','%full bik%')                                    
             ->get();
@@ -42,7 +42,7 @@ class ReporteController extends Controller
             ->distinct()
             ->where('tipo_proveedor','tarifario')
             ->where('Tipo_Marca','TERCERAS')
-            ->where('id_descripcion','Julio2022')
+            ->where('id_descripcion','Dic22prov')
             //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
             //->where('Proveedor','like','%day of%')                                    
             ->get();
@@ -60,10 +60,10 @@ class ReporteController extends Controller
 
    public function generareportefr(){
 
-    $provfillrate = DB::table('pn_fillrate_comu')
+    $provfillrate = DB::table('pn_fillrate_temp')
         ->select('CODPROVEEDOR','PROVEEDOR')
         ->distinct() 
-        ->where('id_descripcion','Julio2022')                
+        ->where('id_descripcion','Diciembre2022')                
         ->where('FLAG_OCABIERTA','NO')                
         ->where('ESTADO','Recepcion Completa')             
         //->where('PROVEEDOR','like','%NEWELL%')         
@@ -82,18 +82,22 @@ class ReporteController extends Controller
 
     public function generareportens(){
 
-        $provnivelservicio = DB::table('pn_nivelservicio_temp_lrvl')
+        $mes = [7,8,9,10,11];
+        $semana = 20;
+
+        //$provnivelservicio = DB::table('pn_nivelservicio_temp_lrvl')
+        $provnivelservicio = DB::table('pn_nivelservicio_temp')
             ->select('RUC','RAZON_SOCIAL')
             ->distinct() 
             //->where('id_descripcion','cargainicial')
             //->where('SEMANA','18')
-            ->where('mes',3)
+            ->whereIn('mes',$mes)
             //->where('PROVEEDOR','like','%NEWELL%')         
             ->get();
         
         foreach ($provnivelservicio as $provns) {
             
-            $reporte = new NsExport($provns->RUC,'18');//RUCPROVEEDOR, SEMANA
+            $reporte = new NsExport($provns->RUC,$mes,$semana);//RUCPROVEEDOR, MES, SEMANA
     
             Excel::store($reporte, $provns->RAZON_SOCIAL.'.xlsx','public');
         }

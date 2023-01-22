@@ -14,9 +14,10 @@ class NsBdatos implements FromCollection, WithHeadings, ShouldAutoSize, WithTitl
     * @return \Illuminate\Support\Collection
     */
 
-    public function __construct(String $ruc, $semana)
+    public function __construct(String $ruc, $mes, $semana)
     {
         $this->ruc = $ruc;
+        $this->mes = $mes;
         $this->semana = $semana;
     }
 
@@ -45,9 +46,11 @@ class NsBdatos implements FromCollection, WithHeadings, ShouldAutoSize, WithTitl
     public function collection()
     {
         $ruc = $this->ruc;
+        $mes = $this->mes;
         $semana = $this->semana;
 
-        $dataNS = DB::table('pn_nivelservicio_temp_lrvl')
+        //$dataNS = DB::table('pn_nivelservicio_temp_lrvl')
+        $dataNS = DB::table('pn_nivelservicio_temp')
         ->select('CUD',
                 'OC_PMM',
                 'DESCRIPCION_PRODUCTO', 
@@ -65,7 +68,7 @@ class NsBdatos implements FromCollection, WithHeadings, ShouldAutoSize, WithTitl
                 'SEMANA')                    
         //->where('id_descripcion','cargainicial')                                            
         ->where('RUC',$ruc)
-        ->where('MES',3)
+        ->whereIn('MES',$mes)
         //->where('SEMANA',$semana)
         ->orderBy('MES','DESC')
         ->orderBy('SEMANA','DESC')

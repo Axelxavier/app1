@@ -33,7 +33,7 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
     {
         return [
             ['Liquidación de Servicios Logisticos'],
-            ['Del 21 Jun al 20 Jul'],
+            ['Del 21 Dic al 31 Dic'],
             ['Proveedor',
             'Division',
             'Departamento',
@@ -86,7 +86,7 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
                             'monto_aplicado')                    
                     ->where('tipo_proveedor','tarifario')
                     ->where('Tipo_Marca','TERCERAS')
-                    ->where('id_descripcion','Julio2022')
+                    ->where('id_descripcion','Dic22prov')
                     //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
                     ->where('Proveedor','like','%'.$nomprov.'%')                    
                     ->get();
