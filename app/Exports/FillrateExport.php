@@ -22,7 +22,7 @@ class FillrateExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     * @return \Illuminate\Support\Collection
     */
 
-    private $cuentafilas;
+    private $cuentafilas,$codprov;
 
     public function __construct(String $codprov)
     {
@@ -33,7 +33,7 @@ class FillrateExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     {
         return [
             ['Reporte Fillrate'],
-            ['Del 26 Nov al 20 Dic'],
+            ['Del 20 Feb al 20 Mar'],
             ['Proveedor',
             'Nro Orden',
             'Tipo OC',
@@ -63,7 +63,7 @@ class FillrateExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
                             'DIFCANREC',
                             'FILLRATE',
                             'LUCROCESAN')                    
-                    ->where('id_descripcion','Diciembre2022')
+                    ->where('id_descripcion','Abril2023')
                     ->where('FLAG_OCABIERTA','NO')                
                     ->where('ESTADO','Recepcion Completa')        
                     ->where('CODPROVEEDOR','like','%'.$codprov.'%')

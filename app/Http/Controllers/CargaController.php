@@ -366,7 +366,8 @@ class CargaController extends Controller
             $Ns->TIPO_PROMESA_CORP = $array[$i][$j];$j=$j+1;
             $Ns->FECHA_MIN_PROMESA = $array[$i][$j];$j=$j+1;
             $Ns->PROVEEDOR_RC = $array[$i][$j];$j=$j+1;
-            $Ns->FECHA_R2 = $array[$i][$j];$j=$j+1;
+            $Ns->FECHA_R2 = $array[$i][$j];$j=$j+1; 
+            $Ns->ETQ_FRAUDE = $array[$i][$j];$j=$j+1;
             $Ns->VAL_RESPONSABLEPROV = $array[$i][$j];$j=$j+1;
             $Ns->VAL_NCDDC = $array[$i][$j];$j=$j+1;            
             $Ns->STATUS = $array[$i][$j];$j=$j+1;
@@ -377,9 +378,9 @@ class CargaController extends Controller
             $Ns->DIFERENCIADIAS = $array[$i][$j];$j=$j+1;
             $Ns->PORC_PENALIDAD = $array[$i][$j];$j=$j+1;
             $Ns->MONTO_PENALIDAD = $array[$i][$j];$j=$j+1;
-            $Ns->VALIDAFACTURA = $array[$i][$j];$j=$j+1;
-            $Ns->MONTO_A_FACTURAR = $array[$i][$j];$j=$j+1;
+            $Ns->VALIDAFACTURA = $array[$i][$j];$j=$j+1;            
             $Ns->MOTIVO_EXCLUSION = $array[$i][$j];$j=$j+1;
+            $Ns->MONTO_A_FACTURAR = $array[$i][$j];$j=$j+1;
             $Ns->VALIDAREGISTRO = $array[$i][$j];$j=$j+1;
             $Ns->SEMANA = $array[$i][$j];$j=$j+1;
             $Ns->MES = $array[$i][$j];$j=$j+1;

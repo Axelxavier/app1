@@ -22,7 +22,7 @@ class TcoExport implements FromCollection, WithHeadings, ShouldAutoSize, WithSty
     * @return \Illuminate\Support\Collection
     */
 
-    private $cuentafilas;
+    private $cuentafilas,$nomprov;
 
     public function __construct(String $nomprov)
     {
@@ -33,7 +33,7 @@ class TcoExport implements FromCollection, WithHeadings, ShouldAutoSize, WithSty
     {
         return [
             ['Liquidación de Servicios Logisticos'],
-            ['Del 21 Dic al 31 Dic'],
+            ['Del 21 Mar al 20 Abr'],
             ['Proveedor',
             'Division',
             'Fecha Proceso',
@@ -80,7 +80,7 @@ class TcoExport implements FromCollection, WithHeadings, ShouldAutoSize, WithSty
                 'monto_aplicado')                    
             ->where('tipo_proveedor','cobro%')
             ->where('Tipo_Marca','TERCERAS')
-            ->where('id_descripcion','Dic22prov')
+            ->where('id_descripcion','Abril2023')
             //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
             ->where('Proveedor','like','%'.$nomprov.'%')                    
             ->get();
