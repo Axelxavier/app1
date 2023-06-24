@@ -33,7 +33,7 @@ class TcoExport implements FromCollection, WithHeadings, ShouldAutoSize, WithSty
     {
         return [
             ['Liquidación de Servicios Logisticos'],
-            ['Del 21 Mar al 20 Abr'],
+            ['Del 21 Abr al 20 May'],
             ['Proveedor',
             'Division',
             'Fecha Proceso',
@@ -80,7 +80,7 @@ class TcoExport implements FromCollection, WithHeadings, ShouldAutoSize, WithSty
                 'monto_aplicado')                    
             ->where('tipo_proveedor','cobro%')
             ->where('Tipo_Marca','TERCERAS')
-            ->where('id_descripcion','Abril2023')
+            ->where('id_descripcion','Mayo2023')
             //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
             ->where('Proveedor','like','%'.$nomprov.'%')                    
             ->get();

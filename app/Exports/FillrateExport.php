@@ -33,7 +33,7 @@ class FillrateExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     {
         return [
             ['Reporte Fillrate'],
-            ['Del 20 Feb al 20 Mar'],
+            ['Del 22 May al 19 Jun'],
             ['Proveedor',
             'Nro Orden',
             'Tipo OC',
@@ -63,7 +63,7 @@ class FillrateExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
                             'DIFCANREC',
                             'FILLRATE',
                             'LUCROCESAN')                    
-                    ->where('id_descripcion','Abril2023')
+                    ->where('id_descripcion','Junio2023')
                     ->where('FLAG_OCABIERTA','NO')                
                     ->where('ESTADO','Recepcion Completa')        
                     ->where('CODPROVEEDOR','like','%'.$codprov.'%')
