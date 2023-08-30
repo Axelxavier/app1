@@ -33,7 +33,7 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
     {
         return [
             ['Liquidación de Servicios Logisticos'],
-            ['Del 21 Abr al 20 May'],
+            ['Del 21 Jun al 20 Jul'],
             ['Proveedor',
             'Division',
             'Departamento',
@@ -88,9 +88,10 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
                             'monto_aplicado')                    
                     ->where('tipo_proveedor','tarifario')
                     ->where('Tipo_Marca','TERCERAS')
-                    ->where('id_descripcion','Mayo2023')
+                    ->where('id_descripcion','Julio2023')
                     //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
-                    ->where('Proveedor','like','%'.$nomprov.'%')                    
+                    ->where('Proveedor','like','%'.$nomprov.'%')  
+                    ->where('sis_vigencia',1)                  
                     ->get();
                     
         $this->cuentafilas = count($provporcentajes);
