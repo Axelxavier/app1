@@ -48,6 +48,7 @@ class CargaController extends Controller
             $tco->sucursal_recp = $array[$i][$j]; $j=$j+1;
             $tco->Mh_orig = $array[$i][$j]; $j=$j+1;
             $tco->tipo_despacho = $array[$i][$j]; $j=$j+1;
+            $tco->tipo_mov = $array[$i][$j]; $j=$j+1;
             $tco->Tarifa_s_cross = $array[$i][$j]; $j=$j+1;
             $tco->tarifa_s_pick = $array[$i][$j]; $j=$j+1;
             $tco->tarifa_s_dev = $array[$i][$j]; $j=$j+1;

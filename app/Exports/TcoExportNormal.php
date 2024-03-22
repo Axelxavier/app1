@@ -33,7 +33,7 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
     {
         return [
             ['Liquidación de Servicios Logisticos'],
-            ['Del 21 Nov al 20 Dic'],
+            ['Del 21 Ene al 20 Feb'],
             ['Proveedor',
             'Division',
             'Departamento',
@@ -54,6 +54,10 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
             'Costolog Pick S/',
             'Costolog Dev S/',            
             'Costolog Verde S/', 
+            'Val Cross S/',
+            'Val Pick S/',
+            'Val Dev S/',
+            'Val Verde S/',
             'Observaciones',           
             'Costo Logistico S/']          
         ];
@@ -84,11 +88,15 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
                             'costolog_s_pick', 
                             'costolog_s_dev',                             
                             'costolog_s_verdes', 
+                            'stock_s_cross', 
+                            'stock_s_pick', 
+                            'stock_s_dev',
+                            'stock_s_verdes',
                             'descuento_aplicado',
                             'monto_aplicado')                    
-                    ->where('tipo_proveedor','tarifario')
+                    //->where('tipo_proveedor','tarifario')
                     ->where('Tipo_Marca','TERCERAS')
-                    ->where('id_descripcion','Diciembre2023')
+                    ->where('id_descripcion','Febrero2024')
                     //->wherein('id_descripcion',['Junio2021_aldeas','Julio2021_aldeas'])
                     ->where('Proveedor','like','%'.$nomprov.'%')  
                     ->where('sis_vigencia',1)                  
@@ -103,8 +111,8 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
     {
         $filafin = $this->cuentafilas + 3;
         $celdafinal = $filafin + 1;        
-        $sheet->setCellValue("U{$celdafinal}", "TOTAL");
-        $sheet->setCellValue("V{$celdafinal}", "=SUM(V4:V{$filafin})");
+        $sheet->setCellValue("Y{$celdafinal}", "TOTAL");
+        $sheet->setCellValue("Z{$celdafinal}", "=SUM(Z4:Z{$filafin})");
 
         return [
             // Style the first row as bold text.
@@ -137,7 +145,7 @@ class TcoExportNormal implements FromCollection, WithHeadings, ShouldAutoSize, W
         return [            
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getStyle(
-                    'A3:V3',
+                    'A3:Z3',
                     [
                         'borders' => [
                             'outline' => [      
