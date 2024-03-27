@@ -65,7 +65,7 @@ class ReporteController extends Controller
     $provfillrate = DB::table('pn_fillrate_temp')
         ->select('CODPROVEEDOR','PROVEEDOR')
         ->distinct() 
-        ->where('id_descripcion','Febrero2024')                
+        ->where('id_descripcion','Marzo2024')                
         ->where('FLAG_OCABIERTA','NO')                
         ->where('ESTADO','Recepcion Completa')             
         //->where('PROVEEDOR','like','%NEWELL%')         
